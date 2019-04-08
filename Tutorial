@@ -1,0 +1,43 @@
+keyword should be used: flutter app, flutter tutorial
+Hello friends, today we are going to create full functional fluttr app which will 
+excercise many of the flutter concepts.
+so let's start with understanding what we are going to build
+
+main feature of the app to enable user to listen their favorite podcast by simply providing rss url.
+then app will also able to remember the url submitted by user so user doesn't need to everytime 
+add submit the url to the app.
+
+
+So where we could find the rss feeds for podcast 
+here is website http://listennotes.com where you have to search topic and you will get trending topics there. 
+and click on rss link  to get it.
+
+This rss feeds contains title, pubDate, description, and episodes of the podcast.
+
+
+This flutter tutorial is going to excercise following concepts
+XML parsing in dart (as rss feeds are in dart)
+XML feeds can be too large so parsing them into the seperate dart isolate will be good idea so background execution of the PodcastApp
+adding media player into flutter app 
+adding delightful animations 
+Design whole app using Bloc pattern.
+
+
+This tutorial will be available in series. and today is the first part of series.
+
+and today we will start with xml parsing.
+before parsing xml let's get the idea about what is xml
+paste defination here
+add screenshot here which will explain node, attribute 
+
+then introduce the xml dart library
+here is some code
+
+show important methods which are going to be used
+
+start xml parsing.
+
+
+
+
+PodcastApp
