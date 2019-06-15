@@ -1,14 +1,42 @@
-import 'package:podcastapp/Podcast.dart';
+import 'dart:convert';
+import 'dart:io';
+
+import 'package:path_provider/path_provider.dart';
+import 'package:podcastapp/models/Podcast.dart';
 
 class PersistentStorage {
-  get(String url) {
-    // check if cache store has the entry
-    // other wise fetch new record
-    //set it into cache
-    // return it.
+  List<Podcast> podcasts = [];
+  Future<File> getFile() async {
+    final dir = await getApplicationDocumentsDirectory();
+    print(dir.path);
+    return File("${dir.path}/podcasts.json");
   }
 
-  void set(Podcast podcast) {
-    //set it into cache.
+  Future<List<Podcast>> load() async {
+    if (podcasts.length != 0) {
+      return podcasts;
+    }
+
+    final file = await getFile();
+    final content = await file.readAsString();
+    print(content);
+    final podcastJson = json.decode(content);
+    for (var i in podcastJson) {
+      podcasts.add(Podcast.fromJSON(i));
+    }
+    return podcasts;
+  }
+
+  Future<void> save(Podcast podcast) async {
+    for (var p in podcasts) {
+      if (p.url == podcast.url) {
+        throw new FormatException("Podcast already exists");
+      }
+    }
+    podcasts.add(podcast);
+    // print(podcasts.length);
+    final file = await getFile();
+    final content = json.encode(podcasts);
+    await file.writeAsString(content);
   }
 }

@@ -9,7 +9,8 @@ class TitleBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 10.0),
+        // height: 70.0,
+        padding: EdgeInsets.symmetric(vertical: 25.0),
         child: Text(
           "PodcastApp",
           style: Theme.of(context)

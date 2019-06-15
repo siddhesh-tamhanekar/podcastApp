@@ -26,7 +26,9 @@ dependencies:
   http: any
   rxdart: any
   xml: ^3.3.1
-  # shared_preferences: ^0.5.1+2
+  cached_network_image: ^0.8.0
+  media_player:
+    path: /home/siddhesh/Documents/media_player/
   
 
 dev_dependencies:
@@ -46,8 +48,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #  - images/a_dot_burr.jpeg
+  assets:
+    - assets/default.jpg
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
