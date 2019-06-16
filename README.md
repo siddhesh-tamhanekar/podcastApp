@@ -10,8 +10,8 @@ A podcast application is built using flutter which let's the user save and liste
 
 ## Screenshots
 <p float="left">
-  <img src="screenshots/1.png" width="100" />
-  <img src="screenshots/2.png" width="100" />
-  <img src="screenshots/3.png" width="100" />
-  <img src="screenshots/4.png" width="100" />
+  <img src="screenshots/1.png" width="200" />
+  <img src="screenshots/2.png" width="200" />
+  <img src="screenshots/3.png" width="200" />
+  <img src="screenshots/4.png" width="200" />
 </p>
