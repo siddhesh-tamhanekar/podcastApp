@@ -27,8 +27,7 @@ dependencies:
   rxdart: any
   xml: ^3.3.1
   cached_network_image: ^0.8.0
-  media_player:
-    path: /home/siddhesh/Documents/media_player/
+  media_player: 0.0.7
   
 
 dev_dependencies:

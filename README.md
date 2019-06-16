@@ -1,16 +1,17 @@
-# podcastapp
+# Podcast App
 
-A new Flutter project.
+A podcast application is built using flutter which let's the user save and listen their favourite podcast feed
 
-## Getting Started
+## How to add the podcast
+1. visit [listennotes.com](https://www.listennotes.com/ "listennotes.com")
+2. search favourite podcast 
+3. copy the rss feed link and paste into the application 
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+## Screenshots
+<p float="left">
+  <img src="screenshots/1.png" width="100" />
+  <img src="screenshots/2.png" width="100" />
+  <img src="screenshots/3.png" width="100" />
+  <img src="screenshots/4.png" width="100" />
+</p>
