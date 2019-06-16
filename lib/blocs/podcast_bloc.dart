@@ -15,6 +15,7 @@ class PodcastBloc {
 
   Future<List<Podcast>> fetchPodcasts(int _) async {
     p = new PersistentStorage();
+    print("fetching podcasts");
     return await p.load();
   }
 }

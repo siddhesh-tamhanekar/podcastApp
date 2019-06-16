@@ -14,17 +14,24 @@ class AddPodcastScreen extends StatefulWidget {
 
 class _AddPodcastScreenState extends State<AddPodcastScreen> {
   String url = "";
+  TextEditingController _controller = new TextEditingController();
   bool loading = false;
   String error = "";
   Podcast podcast;
   @override
   void initState() {
+    _controller.addListener(() {
+      setState(() {
+        url = _controller.text;
+      });
+    });
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: MediaQuery.of(context).size.height,
       padding: EdgeInsets.all(10.0),
       child: Column(
         children: <Widget>[
@@ -32,6 +39,7 @@ class _AddPodcastScreenState extends State<AddPodcastScreen> {
             children: <Widget>[
               Expanded(
                   child: TextField(
+                controller: _controller,
                 decoration: InputDecoration(
                   labelText: "Podcast URL",
                   border: OutlineInputBorder(
@@ -39,11 +47,6 @@ class _AddPodcastScreenState extends State<AddPodcastScreen> {
                       borderSide: BorderSide(width: 1.0)),
                   contentPadding: EdgeInsets.all(10.0),
                 ),
-                onChanged: (value) {
-                  setState(() {
-                    url = value;
-                  });
-                },
               )),
               FlatButton(
                 color: Theme.of(context).primaryColor,
@@ -52,6 +55,20 @@ class _AddPodcastScreenState extends State<AddPodcastScreen> {
                   style: TextStyle(color: Colors.white),
                 ),
                 onPressed: fetchPodcast,
+              )
+            ],
+          ),
+          Row(
+            children: <Widget>[
+              Text("e.g. https://www.npr.org/rss/podcast.php?id=510313"),
+              IconButton(
+                onPressed: () {
+                  // setState(() {
+                  _controller.value = TextEditingValue(
+                      text: "https://www.npr.org/rss/podcast.php?id=510313");
+                  // });
+                },
+                icon: Icon(Icons.content_copy),
               )
             ],
           ),
@@ -102,7 +119,7 @@ class _AddPodcastScreenState extends State<AddPodcastScreen> {
                     SizedBox(height: 10.0),
                     Text(
                       podcast.description,
-                      maxLines: 8,
+                      maxLines: 6,
                       style: TextStyle(color: Colors.grey),
                     ),
                     SizedBox(height: 10.0),

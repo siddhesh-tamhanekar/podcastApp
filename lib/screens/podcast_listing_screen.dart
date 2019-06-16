@@ -2,17 +2,21 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:podcastapp/models/Podcast.dart';
 import 'package:podcastapp/screens/details_page.dart';
+import 'package:podcastapp/widgets/no_podcast_found.dart';
 
 class PodcastListingScreen extends StatelessWidget {
   final bloc;
-
-  PodcastListingScreen(this.bloc);
+  final parent;
+  PodcastListingScreen(this.bloc, this.parent);
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<Object>(
         stream: bloc.podcasts,
         builder: (context, AsyncSnapshot snapshot) {
           if (snapshot.data is List<Podcast>) {
+            if (snapshot.data.length == 0) {
+              return new NoPodcastFound(parent: parent);
+            }
             return SliverGrid(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,

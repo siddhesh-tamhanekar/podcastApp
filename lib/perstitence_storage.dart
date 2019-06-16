@@ -8,19 +8,25 @@ class PersistentStorage {
   List<Podcast> podcasts = [];
   Future<File> getFile() async {
     final dir = await getApplicationDocumentsDirectory();
-    print(dir.path);
     return File("${dir.path}/podcasts.json");
   }
 
   Future<List<Podcast>> load() async {
+    print("loading file");
     if (podcasts.length != 0) {
       return podcasts;
     }
 
+    if ((await (await getFile()).exists()) == false) {
+      print("no content found");
+      return Future(() => podcasts);
+    }
+    print("file eixsts");
     final file = await getFile();
     final content = await file.readAsString();
-    print(content);
+    print("content= $content");
     final podcastJson = json.decode(content);
+    print(podcastJson);
     for (var i in podcastJson) {
       podcasts.add(Podcast.fromJSON(i));
     }

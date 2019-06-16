@@ -4,7 +4,10 @@ import 'package:podcastapp/screens/add_podcast_screen.dart';
 import 'package:podcastapp/screens/podcast_listing_screen.dart';
 import 'package:podcastapp/widgets/title_bar.dart';
 
-void main() => runApp(MaterialApp(home: MyApp()));
+void main() => runApp(MaterialApp(
+      home: MyApp(),
+      debugShowCheckedModeBanner: false,
+    ));
 
 class MyApp extends StatelessWidget {
   final PodcastBloc bloc = new PodcastBloc();
@@ -13,6 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         floatingActionButton: FloatingActionButton(
+          tooltip: "Add Podcast Feed",
           child: Icon(Icons.add),
           onPressed: () {
             shwoBottomSheet(context);
@@ -24,7 +28,7 @@ class MyApp extends StatelessWidget {
             child: CustomScrollView(
               slivers: <Widget>[
                 new TitleBar(),
-                PodcastListingScreen(bloc),
+                PodcastListingScreen(bloc, this),
               ],
             ),
           ),
