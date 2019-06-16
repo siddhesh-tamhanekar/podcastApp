@@ -8,7 +8,9 @@ A podcast application is built using flutter which let's the user save and liste
 3. copy the rss feed link and paste into the application 
 
 ## APK link
-[Generated APK](screenshots/podcastapp.apk "apk link")
+[Generated APK](apk/podcastapp.apk "apk link")
+
+
 ## Screenshots
 <p float="left">
   <img src="screenshots/1.png" width="200" />
@@ -16,3 +18,8 @@ A podcast application is built using flutter which let's the user save and liste
   <img src="screenshots/3.png" width="200" />
   <img src="screenshots/4.png" width="200" />
 </p>
+
+
+## TODO
+1. adding bad network error screen
+2. adding help screen about how to add the podcast. 
