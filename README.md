@@ -7,7 +7,8 @@ A podcast application is built using flutter which let's the user save and liste
 2. search favourite podcast 
 3. copy the rss feed link and paste into the application 
 
-
+## APK link
+[Generated APK](screenshots/podcastapp.apk "apk link")
 ## Screenshots
 <p float="left">
   <img src="screenshots/1.png" width="200" />
